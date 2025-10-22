@@ -27,6 +27,7 @@ jobs:
       run: npm run build
     
     - name: Deploy to Vercel Production
+      if: ${{ secrets.VERCEL_TOKEN != '' }}
       uses: amondnet/vercel-action@v25
       with:
         vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -34,4 +35,17 @@ jobs:
         vercel-project-id: ${{ secrets.PROJECT_ID }}
         vercel-args: '--prod'
         working-directory: ./
+    
+    - name: Deployment Info
+      run: |
+        if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+          echo "⚠️  Vercel deployment skipped - VERCEL_TOKEN not configured"
+          echo "ℹ️  To enable Vercel deployment, add these secrets to GitHub:"
+          echo "   - VERCEL_TOKEN"
+          echo "   - ORG_ID"
+          echo "   - PROJECT_ID"
+          echo "✅ Build completed successfully!"
+        else
+          echo "✅ Build and deployment completed!"
+        fi
 
