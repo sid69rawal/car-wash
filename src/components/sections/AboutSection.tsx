@@ -27,7 +27,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gold">About</span> Maximum Detail
+              <span className="text-gold">About</span> Maximum Car Detailing
             </h2>
             <p className="text-lg text-gray-300 mb-6">
               With over 15+ years of experience in Toronto, we&apos;ve perfected the art of car detailing. 

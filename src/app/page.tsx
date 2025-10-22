@@ -4,6 +4,7 @@ import {
   HeroSection,
   ServicesSection,
   AboutSection,
+  GallerySection,
   ReviewsSection,
   ContactSection
 } from '@/components';
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
+      <GallerySection />
       <ReviewsSection />
       <ContactSection />
       <Footer />
