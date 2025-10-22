@@ -25,7 +25,6 @@ export default function ReviewsSection() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [overallRating, setOverallRating] = useState<number>(0);
   const [totalReviews, setTotalReviews] = useState<number>(0);
-  const [lastUpdated, setLastUpdated] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [reviewsPerSlide] = useState<number>(3);
@@ -37,7 +36,6 @@ export default function ReviewsSection() {
       setReviews(data.reviews || []);
       setOverallRating(data.overallRating || 0);
       setTotalReviews(data.totalReviews || 0);
-      setLastUpdated(data.lastUpdated || '');
     } catch (err) {
       console.error('Error loading reviews:', err);
     } finally {
@@ -75,26 +73,6 @@ export default function ReviewsSection() {
     const start = currentSlide * reviewsPerSlide;
     const end = start + reviewsPerSlide;
     return reviews.slice(start, end);
-  };
-
-  const formatDate = (timestamp: number) => {
-    const date = new Date(timestamp * 1000);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  const formatLastUpdated = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
   };
 
   if (loading) {

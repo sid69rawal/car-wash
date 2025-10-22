@@ -30,7 +30,7 @@ export default function AboutSection() {
               <span className="text-gold">About</span> Maximum Detail
             </h2>
             <p className="text-lg text-gray-300 mb-6">
-              With over 15+ years of experience in Toronto, we've perfected the art of car detailing. 
+              With over 15+ years of experience in Toronto, we&apos;ve perfected the art of car detailing. 
               Located on Eastern Ave, our team of certified professionals uses only the finest products and techniques to ensure your 
               vehicle receives the premium treatment it deserves.
             </p>
